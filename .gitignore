@@ -1,0 +1,8 @@
+/images
+/out
+.settings/
+.project
+.idea/
+.DS_Store
+.classpath
+ImageGrabber.iml
