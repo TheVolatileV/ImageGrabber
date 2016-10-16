@@ -14,13 +14,15 @@ public class MangareaderDownloader {
 
     private String mangaName;
     private String url;
+    private String path;
 
-	public MangareaderDownloader(String mangaName) throws IOException
+	public MangareaderDownloader(String mangaName, String path) throws IOException
 	{
 		this.mangaName = mangaName;
 		this.url = SOURCE + mangaName;
+        this.path = path;
         Manga manga = getManga();
-        manga.download();
+        manga.download(path);
 	}
 
     /**

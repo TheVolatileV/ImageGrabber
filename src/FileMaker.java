@@ -15,15 +15,14 @@ import org.jsoup.Jsoup;
 public class FileMaker {
 	private static String VALIDATOR = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) "
 			+ "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36";
-    protected final static String PATH = "/Users/elijahhursey/Dropbox/workspace/ImageGrabber/images/";
-	public static String storeImageIntoFS(Page page) {
+	public static String storeImageIntoFS(String path, Page page) {
 	    String imagePath = null;
 	    try {
 	        byte[] bytes = Jsoup.connect(page.getUrl())
 	        		.userAgent(VALIDATOR)
 	        				.ignoreContentType(true).execute().bodyAsBytes();
 	        ByteBuffer buffer = ByteBuffer.wrap(bytes);
-	        String rootTargetDirectory = PATH + page.getMangaName() + "/"
+	        String rootTargetDirectory = path + "/" + page.getMangaName() + "/"
                     + "Chapter" + page.getChapterNum();
 	        imagePath = rootTargetDirectory + "/Page_" + page.getPage() + ".jpg";
 	        System.out.println(imagePath);

@@ -44,7 +44,7 @@ public class Manga
     /**
      * Downloads all chapters that are currently stored in the Map.
      */
-    public void download()
+    public void download(String path)
     {
         for(Map.Entry<Integer, Set<Page>> entry : manga.entrySet())
         {
@@ -52,7 +52,7 @@ public class Manga
             Set<Page> pages = entry.getValue();
             for (Page page : pages)
             {
-                FileMaker.storeImageIntoFS(page);
+                FileMaker.storeImageIntoFS(path, page);
             }
         }
     }

@@ -10,7 +10,10 @@ public class Tester {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter the manga's name. (with hyphens as in the link on www.mangareader.net");
 		String name = scanner.nextLine();
+        System.out.println("Please enter the absolute file path.");
+        String path = scanner.nextLine();
 		System.out.println("Please wait.");
-		MangareaderDownloader g = new MangareaderDownloader(name);
+		MangareaderDownloader g = new MangareaderDownloader(name, path);
 	}
+
 }
